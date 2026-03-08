@@ -72,16 +72,67 @@
 
 //Ass 5
 
-let n=1235;
-let t=0;
+// let n=1235;
+// let t=0;
 
-do{
+// do{
 
-    t = t + (n%10);
-    // console.log(t)
-    n = n/10;
-    // console.log(n)
+//     t = t + (n%10);
+//     // console.log(t)
+//     n = Math.floor(n/10);
+//     // console.log(n)
 
-}while(n>1);
+// }while(n>0);
 
-console.log(Math.round(t));
+// console.log(t);
+
+//Ass 6
+
+// for(let i=0; i<=50; i++){
+
+//     if( i%3 === 0 && i%5 === 0){
+//         console.log("FizzBuzz");
+//     }
+//     else if(i%3 === 0){
+//         console.log("Fizz");
+//     }
+//     else if(i%5 === 0){
+//         console.log("Buzz");
+//     }
+//     else{
+//         console.log(i);
+//     }
+// }
+
+//Ass 7
+// let n=99;
+// let no = 0;
+
+//  for(let i=2; i<=(n/2); i++){
+//     if(n%i === 0){
+//         no++;
+//     }
+//  }
+//  console.log(no);
+//  if(no === 0){
+//     console.log("Prime Num")
+//  }
+//  else{
+//     console.log("Not a prime")
+//  }
+
+
+//Ass 9
+let n1 =24;
+let n2 =121;
+let n3 =191;
+
+if(n1>n2 && n1>n3){
+    console.log("greater is n1: ",n1);
+}
+else if(n2>n1 && n2>n3){
+    console.log("greater is n2:",n2);
+}
+else{
+    console.log("greater is n3:",n3);
+}
