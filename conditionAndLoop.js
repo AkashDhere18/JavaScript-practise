@@ -20,7 +20,7 @@
 //     else{
 //         console.log("Gulabjamun");
 //     }
-    
+
 // }
 
 //Ass 1
@@ -123,16 +123,74 @@
 
 
 //Ass 9
-let n1 =24;
-let n2 =121;
-let n3 =191;
+// let n1 =24;
+// let n2 =121;
+// let n3 =191;
 
-if(n1>n2 && n1>n3){
-    console.log("greater is n1: ",n1);
-}
-else if(n2>n1 && n2>n3){
-    console.log("greater is n2:",n2);
-}
-else{
-    console.log("greater is n3:",n3);
-}
+// if(n1>n2 && n1>n3){
+//     console.log("greater is n1: ",n1);
+// }
+// else if(n2>n1 && n2>n3){
+//     console.log("greater is n2:",n2);
+// }
+// else{
+//     console.log("greater is n3:",n3);
+// }
+
+//Ass 11
+
+// let str = "Hello Javascript";
+// let vowles = "aeiouAEIOU"
+// let strModified = str.replaceAll(" ", "");
+// let vowelsCount = 0;
+// for (i = 0; i < strModified.length; i++) {
+//     if (vowles.includes(strModified.charAt(i) ) === true) {
+//         vowelsCount++;
+//     }
+// }
+
+// console.log("Vowels =", vowelsCount);
+// console.log("Consonents =", strModified.length - vowelsCount);
+
+//Ass 12
+// let num = 12345;
+// let numStr = num.toString();
+// let reverseNum ="";
+
+// for(let i=numStr.length-1; i >= 0; i--){
+// //    console.log(i);
+//    reverseNum = reverseNum + numStr[i];
+// }
+
+// console.log(Number(reverseNum));
+
+
+//Ass 13
+
+// let sumofOdd =0;
+// let sumofEven =0;
+
+// for(let i=0; i<=100; i++){
+//     if(i%2 == 0){
+//         sumofEven += i;
+//     }
+//     else{
+//         sumofOdd += i;
+//     }
+// }
+
+// console.log("Sum of even no =",sumofEven);
+// console.log("Sum of odd no =",sumofOdd);
+
+
+//Ass 14
+
+// let num=5;
+// let factorial = 1;
+
+// while(num>0){
+//     factorial = factorial*num;
+//     num=num-1;
+// }
+
+// console.log(factorial);
