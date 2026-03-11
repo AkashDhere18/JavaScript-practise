@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String-operations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+
+<body>
+    <h1 class="text-center bg bg-secondary p-3">
+        Operations on string in javascript
+    </h1>
+
+    <div class="container text-center">
+        <textarea id="inputBox" placeholder="Add Input Text Here" rows="5" cols="50"></textarea>
+    </div>
+
+    <div id="outputBox" class="bg-secondary p-1 mb-3" style="height: 100px; width: 35%; color: white; margin: 2% auto">
+        Result
+    </div>
+
+    <div id="buttons" class="container d-flex flex-wrap gap-4">
+        <div>
+            <button class="btn btn-outline-primary" onclick="countVowels()">Count Vowels</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary" onclick="palindromChek()">Check Palindrom</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary">First word of sentence</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary" onclick="replaceSpace()">Replace all space with (-)</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary">Split string into array of words</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary">First letter of each word to uppper case</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary" onclick="string_start_end_with_sameChar()">Is first and last char of str same</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary">Count Vowels</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary">Count Vowels</button>
+        </div>
+
+        <div>
+            <button class="btn btn-outline-primary">Count Vowels</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
