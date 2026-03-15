@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks-Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container w-75  border text-center p-3" style="height: 80vh; margin: 4% auto; box-shadow: 0 0 4px 1px rgba(168, 168, 168, 0.873);">
+        <h1>Student Mark's Calculator</h1>
+        <div class="container mb-5">
+            <input id="marksInput" type="number" placeholder="Enter Marks Here" class="my-4 px-3 py-2 rounded border-0" style="box-shadow: 0 0 4px 1px rgba(168, 168, 168, 0.873);"/><br/>
+            <button class="btn btn-primary m-1" onclick="addMarks()">Add Marks</button>
+            <button class="btn btn-primary m-1" onclick="calculateMarks()">Calculate</button>
+            <button class="btn btn-primary m-1" onclick="clearAll()">Clear All</button>
+        </div>
+        <div class="container " id="Calculated-marks">
+            <p>Total Marks :- <span id="total">0</span></p>
+            <p>Average Marks :- <span id="average">0</span></p>
+            <p>Highest Marks :- <span id="highest">0</span></p>
+            <p>Lowest Marks :- <span id="lowest">0</span></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
