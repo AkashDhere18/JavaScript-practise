@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search-in-Array</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container text-center border my-5 p-4 rounded" style="margin: auto; box-shadow: 0 0 4px 1px rgba(168, 168, 168, 0.873);">
+        <h1 class="mb-3">Search in an Array</h1>
+        <input type="text" placeholder="Search here" id="inputElement" class="mx-2 p-2"/>
+        <button class="btn btn-primary mb-3" onclick="searchF()">Search</button>
+        <div class="container fw-bold my-3" id="result"></div>
+    </div>
+
+
+    <script>
+        FoodArray = ['Paneer','Cubes','Garam Masala','Methi','Chaat Masala']
+
+        inputElement = document.querySelector("#inputElement")
+        
+        function searchF(){
+            inputValue = inputElement.value
+            // console.log(inputValue)
+
+            ing = FoodArray.find((element) => element.toLowerCase() == inputValue.toLowerCase() )
+            // console.log(ing)
+
+            if(ing){
+                // console.log("found")
+                document.querySelector("#result").innerHTML = ing
+            }
+            else{
+                // console.log("not found")
+                document.querySelector("#result").innerHTML = "Not Found"
+            }
+
+            inputElement.value=""
+      }
+        
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
