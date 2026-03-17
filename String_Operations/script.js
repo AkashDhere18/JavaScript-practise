@@ -62,25 +62,28 @@ function stringToArray(){
     outputElement.innerHTML = "Generated Array is :" + newArray
 }
 
-function string_start_end_with_sameChar(){
-    inputValue = inputElement.value;
+function FirstChUppercase(){
+    inputValue = inputElement.value ;
+    console.log(inputValue)
+    newArray = inputValue.split(" ")
+    console.log(newArray)
 
-    firstCh = inputValue.charAt(0);
-    lastCh = inputValue.charAt(inputValue.length-1);
+    updatedAr = newArray.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+    console.log(updatedAr)
 
-    if(firstCh === lastCh){
-        outputElement.innerHTML = "True";
-    }
-    else{
-        outputElement.innerHTML = "False";
-    }
+    outputElement.innerHTML = updatedAr;
+
 }
-// function eactWordUppercase(){
-//     inputValue = hgfg ;
 
-//     let updatedValue = inputValue.toTitleCase()
-//     console.log(updatedValue)
-// }
+function reverseChOfString(){
+    inputValue =inputElement.value;
+    let newStr =""
+    for(i=inputValue.length-1; i>=0; i--){
+       newStr+=inputValue[i]
+    }
+
+    outputElement.innerHTML = newStr;
+}
 
 function numberOfOccurance(){
     inputValue = inputElement.value
@@ -97,4 +100,35 @@ function numberOfOccurance(){
     }
 
     return outputElement.innerHTML = `No of occurance of ${specificWord} :` + occurance
+}
+
+function removeNonAlphanumeric(){
+    inputValue = inputElement.value
+    alphanumeric="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 "
+
+    newIP = ""
+    for(i=0; i<inputValue.length; i++){
+        if(alphanumeric.includes(inputValue.charAt(i))){
+            newIP+= inputValue.charAt(i)
+        }
+        else{
+            inputValue.charAt(i).replace("")
+        }
+    }
+
+    outputElement.innerHTML = newIP
+}
+
+function string_start_end_with_sameChar(){
+    inputValue = inputElement.value;
+
+    firstCh = inputValue.charAt(0);
+    lastCh = inputValue.charAt(inputValue.length-1);
+
+    if(firstCh === lastCh){
+        outputElement.innerHTML = "True";
+    }
+    else{
+        outputElement.innerHTML = "False";
+    }
 }
