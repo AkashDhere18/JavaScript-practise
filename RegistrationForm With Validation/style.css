@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg,rgb(3, 69, 3),rgb(49, 106, 30));
+    font-family: Arial;
+}
+
+.container{
+    width:80%;
+    height:85vh;
+    background-color: white;
+    margin:42px  135px;
+    border-radius: 2rem;
+    display: flex;
+}
+
+.left-content{
+    width: 40%;
+    height: 100%;
+    background-color: rgb(2, 101, 97);
+    border-radius: 2rem 25% 25% 2rem;
+    text-align: center;
+    padding: 15% 0;
+    color: white;
+}
+
+.left-content h1{
+    font-weight: bolder;
+    font-size: 250%;
+    margin-bottom: 12px;
+}
+
+.left-content p{
+    font-size: 110%;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.signIn-btn{
+    padding: 10px 40px;
+    background-color: transparent;
+    border:inset;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.signIn-btn:hover{
+    zoom: 105%;
+    transition: 0.15;
+    background-color: white;
+    color: rgb(2, 101, 97);
+    transition: 0.15;
+}
+
+.right-content{
+    text-align: center;
+    padding: 8% 15%;
+}
+
+.right-content h1{
+    font-weight: bolder;
+    font-size: 250%;
+    margin-bottom: 5%;
+}
+
+.login-btns button{
+    width:40px;
+    height: 40px;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: transparent;
+    color: rgb(2, 101, 97);
+    border: 2px solid rgb(2, 101, 97);
+}
+
+.login-btns button:hover{
+    cursor: pointer;
+    background-color: rgb(2, 101, 97);
+    color: white;
+}
+
+.right-content p{
+    font-size: 75%;
+    margin-bottom:  5%;;
+}
+
+.form input{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 18px;
+    padding: 8px;
+    background-color: rgba(128, 128, 128, 0.278);
+    border: none;
+}
+
+.form input:focus{
+    outline: none;
+    height:35px ;
+}
+
+.signUp-btn{
+    padding: 10px 40px;
+    background-color: rgb(137, 212, 24);
+    border:none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.signUp-btn:hover{
+    zoom: 105%;
+    transition: 0.15;
+}
