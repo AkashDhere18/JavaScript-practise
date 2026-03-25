@@ -3,39 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration-Form</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class=container>
         <div class="left-content">
-            <h1>Welcome Back!</h1>
-            <p>Provide your personal details to use all<br/> features</p>
-            <button class="signIn-btn">LOGIN</button>
+            <h1>Welcome</h1>
+            <p>If not registered provide your personal details and Register</p>
+            <button class="signIn-btn" onclick="gotoRegister()">Register</button>
         </div>
         <div class="right-content">
-            <h1>Registration Form</h1>
-            <!-- <div class="login-btns">
-                <button><i class="fa-brands fa-google"></i></button>
-                <button><i class="fa-brands fa-facebook-f"></i></button>
-                <button><i class="fa-brands fa-github"></i></button>
-                <button><i class="fa-brands fa-linkedin"></i></button>
-            </div> -->
+            <h1>Login Form</h1>
 
-            <!-- <h1>OR</h1> -->
-
-            <p>Fill Out The Following Info For Regestration</p>
+            <p>Fill Out The Following Info For Login</p>
 
             <form class="form">
-                <input type="text" placeholder="Name" id="inputName"/><br/>
                 <input type="email" placeholder="Email" id="inputEmail"/><br/>
                 <input type="password" placeholder="Password" id="password"/><br/>
-                <input type="password" placeholder="Repeat Password" id="Repassword"/>
-                
-                <button class="signUp-btn">Register</button>
+                <button class="signUp-btn" onclick="Login()">LOGIN</button>
             </form>
         </div>
     </div>
+
+
+
+    <script>
+        // e = 'india@gmail.com'
+        // p = 'bharat'
+        
+        emailElement = document.querySelector('#inputEmail')
+        paasswordElement = document.querySelector('#password')
+
+        function Login(){
+            event.preventDefault()
+
+            let emailValue = emailElement.value 
+            let passwordValue = paasswordElement.value 
+
+            let storedUserData = JSON.parse(localStorage.getItem("UserData")) //get data from localstorage
+            // console.log(storedUserData)
+
+            if(emailValue.trim().length > 0 ){
+                if(emailValue === storedUserData.email){
+
+                    if(passwordValue === storedUserData.password){
+                        window.location.href = './Home.html' 
+                        // alert("registered")
+                    }else{
+                        alert("invalid credentials")
+                    }
+
+                }else{
+                    alert("Not Registered")
+                }
+
+            }else{
+                alert("Enter Email Address")
+            }
+        }
+
+        function gotoRegister(){
+            window.location.href = "./registerForm.html"
+        }
+    </script>
 </body>
 </html>
