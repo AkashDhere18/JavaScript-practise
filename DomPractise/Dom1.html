@@ -38,6 +38,10 @@
             margin: 8px 0;
         }
 
+        .chooseColor div:hover{
+            cursor: pointer;
+        }
+
         .colorGray{
             height: 20px;
             width: 20px;
@@ -76,7 +80,7 @@
     <div>
         <div class="card">
             <div class="cardImg">
-                <img src="./assets/Conti-GT-Mr_clean.jpg">
+                <img src="./assets/Conti-GT-Mr_clean.jpg "  id="bikeImg">
             </div>
             <div class="cardBody">
                 <button class="carBtn btn">CAR</button>
@@ -102,17 +106,22 @@
 
         // const btntags = document.querySelectorAll('.btn')
         btntags = document.querySelectorAll('.btn')
+        imgElement = document.querySelector('#bikeImg')
 
         function colorChangeGray(){
            btntags.forEach(element => {
             element.style.backgroundColor = 'gray'
            });
+
+           imgElement.setAttribute('src','./assets/Conti-GT-Mr_clean.jpg ')
         }
 
         function colorChangeRed(){
            btntags.forEach(element => {
             element.style.backgroundColor = 'red'
            });
+
+           imgElement.setAttribute('src','./assets/Conti-GT-Rocker_red.jpg')
         }
 
         function colorChangeBlack(){
@@ -120,6 +129,8 @@
             element.style.backgroundColor = 'black'
             element.style.color = 'white'
            });
+
+           imgElement.setAttribute('src','./assets/Conti-GT-Slipstream_blue.jpg')
         }
     </script>
 </body>
