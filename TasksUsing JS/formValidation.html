@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormValidation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <h1 class="text-center">Form Validation</h1>
+    <div class="text-center">
+
+        <form>
+            <label for="userName">Name</label>
+            <input type="text" id="userName" /><br/>
+            
+            <label for="Emali">Email</label>
+            <input type="email" id="Emali" /><br/>
+            
+            <label for="PassWord">Password</label>
+            <input type="password" id="PassWord" /><br/>
+
+            <button  id="submitBtn" onclick="validateForm()">Sumbit</button>
+        </form>
+    </div>
+
+
+
+
+    <script>
+        
+        let userNameElement = document.getElementById('userName');
+        let emailElement = document.getElementById('Emali');
+        let passwordElement = document.getElementById('PassWord');
+        
+        function validateForm(){
+            event.preventDefault();
+            let userNameValue = userNameElement.value;
+            let emailValue = emailElement.value;
+            let passwordValue = passwordElement.value;
+
+            const nameRegx = /^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/
+            const emailRegx =/^([a-zA-Z0-9_]){6,}@(gmail\.com)$/
+            const passwordRegx=/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$!%*?&])[A-Za-z0-9@#$!%*?&]{8,}$/
+
+            if(nameRegx.test(userNameValue)){
+                if(emailRegx.test(emailValue)){
+                    if(passwordRegx.test(passwordValue)){
+                        alert("succes")
+                        userNameElement.value = ''
+                        emailElement.value = ''
+                        passwordElement.value = ''
+                    }
+                    else{
+                        alert("Password should contain atleast 1 Capital letter, Small letter, Number and Special character")
+                    }
+                }
+                else{
+                    alert("Enter email ")
+                }
+            }
+            else{
+                alert("First letter of name should be capital")
+            }
+
+            // userNameElement.value = ''
+            // emailElement.value = ''
+            // passwordElement.value = ''
+        }
+
+
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
