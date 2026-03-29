@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class=" border rounded p-4 d-flex justify-content-center" style="margin: 5% auto; width: 50%;">
+        <button class="btn btn-primary" id="plusButton" onclick="pluseONE()">+1</button>
+
+        <!-- <p class="mx-4" id="numValue">0</p> -->
+        <input type="number" value="0" class="mx-4" id="numValue">
+
+        <button class="btn btn-danger" id="minusButton" onclick="minusOne()">-1</button>
+
+        <button class="btn btn-primary ms-4" onclick="resetCount()">Reset</button>
+    </div>
+
+
+
+    <script>
+        const plusBtnElement = document.getElementById('plusButton')
+        const minusBtnElement = document.getElementById('minusButton')
+        const numValueElement = document.getElementById('numValue')
+
+        const numValue = numValueElement.value
+
+        // console.log(numValueElement.value)
+        function saveToLocal(v) {
+            localStorage.setItem('numValue', v)
+        }
+
+        function getFromLocal() {
+            return Number(localStorage.getItem('numValue'))
+        }
+
+        function pluseONE() {
+            let numInLocal = getFromLocal()
+            console.log(numInLocal)
+            let toLocal = numValueElement.value = numInLocal + 1
+            saveToLocal(toLocal)
+        }
+
+        function minusOne() {
+            let numInLocal = getFromLocal()
+
+            if (numInLocal <= 0) {          // ← guard check
+                alert("Cannot go below 0!")
+                return
+            }
+
+            let toLocal = numValueElement.value = numInLocal - 1
+            saveToLocal(toLocal)
+        }
+
+        function resetCount() {
+            saveToLocal(0)
+            numValueElement.value = getFromLocal()
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // console.log(typeof(numValueElement.value))
+            let saved = localStorage.getItem("numValue")
+            if (saved === null) {
+                saveToLocal(0)
+            }
+            numValueElement.value = getFromLocal()
+            // saveToLocal(0)
+        })
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
