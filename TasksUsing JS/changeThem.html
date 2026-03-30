@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <style>
+        /* YOUR DARK MODE CSS GOES HERE */
+        body.dark{
+            background-color: rgb(34, 33, 33);
+            color: white;
+        }
+
+       .cardd{
+        background-color: rgb(81, 78, 78);
+        color: white;
+       }
+
+        .navbard {
+        background-color: #1a1a1a;
+       }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar px-4 py-3">
+        <h2>My Website</h2>
+        <button id="themeBtn">🌙 Dark Mode</button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="container my-5 text-center">
+        <h1>Welcome to My Page</h1>
+        <p class="lead">This is a simple webpage to practice theme toggling.</p>
+    </div>
+
+    <!-- CARDS SECTION -->
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>Card One</h4>
+                    <p>Some sample text inside card one for practice.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>Card Two</h4>
+                    <p>Some sample text inside card two for practice.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h4>Card Three</h4>
+                    <p>Some sample text inside card three for practice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4 mt-5">
+        <p>Made with ❤️ for practice</p>
+    </footer>
+
+    <!-- YOUR JS GOES HERE -->
+    <script>
+        const bodyElement = document.body
+        const changeThemElement =document.getElementById('themeBtn')
+        const navElmt = document.querySelector('.navbar')
+        const cardElmt = document.querySelectorAll('.card')
+
+        changeThemElement.addEventListener('click' , () => {
+
+            bodyElement.classList.toggle('dark')
+
+            navElmt.classList.toggle('navbard')
+
+            cardElmt.forEach( i => {
+                i.classList.toggle('cardd')
+            });
+
+            if(bodyElement.classList.contains('dark')){
+                changeThemElement.textContent = "☀️ Light Mode"
+            }
+            else{
+                changeThemElement.textContent = "🌙 Dark Mode"
+            }
+        })
+    </script>
+
+</body>
+</html>
