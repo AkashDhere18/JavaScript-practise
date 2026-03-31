@@ -39,20 +39,20 @@
         <input type="checkbox" id="excludeAmbigious" name="excludeAmbigious" />
         <label for="excludeAmbigious">Exclude ambigiouc character (eg. |,1,I,O,0)</label><br />
         
-        <button class="btn btn-primary my-2" id="generateBtn" onclick="generatePassword(),paswordStrength()">Generate Password</button><br />
+        <button class="btn btn-primary my-2" id="generateBtn" onclick="generatePassword()">Generate Password</button><br />
         
         <label for="generatedPassword">Generated Password</label>
-        <input id="generatedPassword" type="password" class="px-2" /><br />
+        <input id="generatedPassword" type="password" class="px-2"` /><br />
 
         <input type="checkbox" id="showPassword" name="showPassword" onclick="showPass()"/>
         <label for="showPassword">Show Password</label>
         
         <div class="progress text-center " role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0"aria-valuemax="100" style="width: 30%">
-             <div class="progress-bar  text-center" style="width: 25%; background-color: red; " id="progressBar"></div>
+             <div class="progress-bar  text-center" style="width: 0%; background-color: red; " id="progressBar"></div>
         </div>
-        <b id="passStrengthShow">Weak</b> <br>
+        <b id="passStrengthShow">Pass Strength...</b> <br>
 
-        <button class="btn btn-primary my-2">Copy</button>
+        <button class="btn btn-primary my-2" id="copyBtn">Copy</button>
     </div>
 
 
@@ -67,7 +67,7 @@
         const showPasswordCheck  = document.getElementById('showPassword')
         const strengthBar = document.getElementById('progressBar')        
         const strengthLabel = document.getElementById('passStrengthShow')   
-        // copyBtn
+        const copyBtn = document.getElementById('copyBtn')
 
 
         let lowercase = "abcdefghijklmnopqrstuvwxyz"
@@ -116,8 +116,10 @@
                 let passIdx = Math.floor(Math.random() * pass.length)
                 password1 += pass[passIdx]
             }
-            console.log(password1)
+            // console.log(password1)
             document.getElementById('generatedPassword').value = password1
+
+            paswordStrength()
         }
 
         function showPass(){
@@ -131,7 +133,7 @@
 
         function paswordStrength(){
             let pass1 = generatedPassword.value;
-            console.log(pass1)
+            // console.log(pass1)
             score = 0;
 
             if(pass1.length >= 8)  score++;
@@ -142,7 +144,7 @@
             if(/[A-Z]/.test(pass1)) score++;
             if(/[!@#$%^&*()_\[\]{}|;:,.<>?]/.test(pass1)) score++;
 
-            console.log(score)
+            // console.log(score)
 
             if(score <= 2){
              strengthLabel.textContent = 'Weak';
@@ -165,6 +167,27 @@
                 strengthBar.style.backgroundColor = 'green';
             }    
         }
+
+        copyBtn.addEventListener('click', () => {
+            let passText = generatedPassword.value;
+
+            if (passText == null) return;
+
+            navigator.clipboard.writeText(passText);
+
+            copyBtn.textContent = "Copied"
+
+            setTimeout(function (){
+                copyBtn.textContent = "Copy"
+            },2000)
+
+        })
+
+
+
+        window.addEventListener('DOMContentLoaded', () => {
+            generatePassword()
+        })
 
     </script>
 
